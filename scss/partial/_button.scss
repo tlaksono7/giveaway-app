@@ -1,0 +1,29 @@
+.btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn--main {
+    background-color: $btn-primary;
+    border: 1px solid $btn-primary;
+    border-radius: 10px;
+    color: $color-white;
+    cursor: pointer;
+    &:hover {
+        background-color: $btn-primary-hover;
+        border: 1px solid $btn-primary-hover;
+    }
+}
+
+.btn--reset {
+    background-color: $btn-reset;
+    border: 1px solid $btn-reset;
+    border-radius: 10px;
+    color: $color-black;
+    cursor: pointer;
+    &:hover {
+        background-color: $btn-reset-hover;
+        border: 1px solid $btn-reset-hover;
+    }
+}

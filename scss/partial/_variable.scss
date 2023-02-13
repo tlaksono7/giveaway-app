@@ -1,0 +1,18 @@
+// Color
+
+$primary-color: #269c85;
+$secondary-color: #196b5b;
+$color-white: #ffffff;
+$color-black: #333333;
+$color-blue: #60b6fd;
+$color-pink: #fd6094;
+
+// Background
+ $primary-background: $color-white;
+ $secondary-background: $primary-color;
+
+ // Button
+ $btn-primary: $primary-color;
+ $btn-primary-hover: $secondary-color;
+ $btn-reset: #cccccc;
+ $btn-reset-hover: #afafaf;
