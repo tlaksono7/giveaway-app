@@ -7778,7 +7778,7 @@ img {
   height: auto; }
 
 body {
-  background-color: #ffffff;
+  background-color: #269c85;
   font-family: 'Poppins', sans-serif;
   color: #333333; }
 
@@ -7788,12 +7788,51 @@ body {
   margin: 0 auto; }
 
 .main-content {
-  background-color: white;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 100vh; }
+  align-items: center; }
+
+.content-body {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  text-align: center; }
+
+.content-body__prize-body-name {
+  font-weight: 600; }
+
+.content-body__prize-body-image {
+  text-align: center; }
+
+.prize-body__image--focus {
+  width: 300px; }
+
+.content-body__prize-body-name, .content-body__timer {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px; }
+
+.content-body__time-count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 600; }
+  .content-body__time-count span {
+    font-size: 1rem;
+    margin: 0 10px; }
+
+.content-action {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 10px; }
+
+.content-action__title {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px; }
 
 input {
   border: 1px solid #269c85;
@@ -7801,15 +7840,16 @@ input {
   border-radius: 10px; }
 
 .btn {
-  padding: 10px 20px;
+  padding: 10px;
   border-radius: 10px;
+  font-size: 1rem;
   cursor: pointer; }
 
 .btn--main {
   background-color: #269c85;
   border: 1px solid #269c85;
-  border-radius: 10px;
   color: #ffffff;
+  text-decoration: none;
   cursor: pointer; }
   .btn--main:hover {
     background-color: #196b5b;
@@ -7818,7 +7858,6 @@ input {
 .btn--reset {
   background-color: #cccccc;
   border: 1px solid #cccccc;
-  border-radius: 10px;
   color: #333333;
   cursor: pointer; }
   .btn--reset:hover {

@@ -1,8 +1,58 @@
 .main-content {
-    background-color: white;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
-  }
+    align-items: center;
+}
+
+.content-body {
+    background-color: $primary-background;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.content-body__prize-body-name {
+    font-weight: 600;
+}
+
+
+.content-body__prize-body-image {
+    text-align: center;
+}
+
+.prize-body__image--focus {
+    width: 300px;
+}
+
+
+.content-body__prize-body-name, .content-body__timer {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.content-body__time-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 600;
+    span {
+        font-size: 1rem;
+        margin: 0 10px;
+    }
+}
+
+.content-action {
+    background-color: $primary-background;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.content-action__title {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

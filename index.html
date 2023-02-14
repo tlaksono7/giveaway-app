@@ -16,22 +16,21 @@
 <body>
     <div class="main-content">
         <div class="container">
-            <div id="prize-body">
-                <ul id="prize-list"></ul>
-                <!--<div id="image-prize" class="prize-body__image"></div>
-                <h2 id="prize-name" class="prize-body__name"></h2>
-                <div class="timer">Time remaining: <span id="timeRemaining">0:0:0</span></div>
-                 <div class="enter-giveaway">
-                <div class="enter-giveaway__form">
-                    <input type="text" id="entrantName" placeholder="Enter your name" required>
-                    <input type="email" id="entrantEmail" placeholder="Enter your email" required>
-                    <button type="button" class="btn btn--main btn--enter-giveaway" onclick="enterGiveaway()">Enter Giveaway</button>
+            <div class="content-body">
+                <div id="prize-image" class="content-body__prize-body-image"></div>
+                <h2 id="prize-name" class="content-body__prize-body-name"></h2>
+                <div class="content-body__timer">
+                    <div class="content-body__timer-title">Time remaining:</div>
+                    <div class="content-body__time-count" id="time-remaining">0<span>:</span>0<span>:</span>0</div>
                 </div>
+                <div class="content-body__winner">Winner: <span id="winner">-</span></div>
             </div>
-            -->
+            <div class="content-action">
+                <p class="content-action__title">Fill the form with your name and email to enter the giveaway!</p>
+                <input class="content-action__input content-action__input--name" type="text" id="name-entrant" placeholder="Enter your name" q>
+                <input class="content-action__input content-action__input--email" type="email" id="email-entrant" placeholder="Enter your email">
+                <a class="btn btn--main" id="enter-giveaway">Enter Giveaway</a>
             </div>
-    
-            <div class="winner">Winner: <span id="winner">-</span></div>
         </div>
     </div>
     <script src="assets/js/client.js"></script> 

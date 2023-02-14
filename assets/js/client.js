@@ -1,7 +1,11 @@
-const timeRemainingElement = document.getElementById("timeRemaining")
-const entrantNameElement = document.getElementById("entrantName")
-const entrantEmailElement = document.getElementById("entrantEmail")
-const winnerElement = document.getElementById("winner")
+const prizeImageEl = document.getElementById("prize-image")
+const prizeNameEl = document.getElementById("prize-name")
+const timeRemainingEl = document.getElementById("time-remaining")
+
+const entrantNameEl = document.getElementById("name-entrant")
+const entrantEmailEl = document.getElementById("email-entrant")
+const enterGiveawayEl = document.getElementById("enter-giveaway")
+const winnerEl = document.getElementById("winner")
 const pirzeListEl = document.getElementById("prize-list")
 
 
@@ -28,16 +32,13 @@ const getDataEvent = () => {
         let endTime
         let currentTime = new Date()
 
-        for (let i=0; i < dataEvent.length; i++) {
-            const contentList = `<li>
-                                    <img class="prize-body__image" src="${dataEvent[i].fields.image[0].url}">
-                                    <h2 id="prize-name" class="prize-body__name">${dataEvent[i].fields.prize}</h2>
-                                </li>`
-            pirzeListEl.innerHTML += contentList
-        }
+        prizeNameEl.innerHTML = dataEvent[0].fields.prize
+        prizeImageEl.innerHTML = `<img class="prize-body__image--focus" src="${dataEvent[0].fields.image[0].url}">`
+        endTime = new Date (dataEvent[0].fields.end)
+        localStorage.setItem("id", dataEvent[0].id)
 
         if (dataEvent[0].fields.winner) {
-            winnerElement.innerHTML = `✨ ${dataEvent[0].fields.winner} ✨`;
+            winnerEl.innerHTML = `✨ ${dataEvent[0].fields.winner} ✨`;
         }
        
         const timer = setInterval(() => {
@@ -46,11 +47,11 @@ const getDataEvent = () => {
             const hours = Math.floor(timeDifference / 3600000)
             const minutes = Math.floor((timeDifference % 3600000) / 60000)
             const seconds = Math.floor((timeDifference % 60000) / 1000)
-            timeRemainingElement.innerHTML = `${hours}:${minutes}:${seconds}`
+            timeRemainingEl.innerHTML = `${hours}<span>:</span>${minutes}<span>:</span>${seconds}`
             if (currentTime >= endTime) {
             clearInterval(timer)
             checkWinner()
-            timeRemainingElement.innerHTML = `Giveaway Ended!`
+                timeRemainingEl.innerHTML = `0<span>:</span>0<span>:</span>0`
             }
         }, 1000);
     }
@@ -72,9 +73,7 @@ const checkWinner = () => {
 
     const validateWinner = (data) => {
         let dataWinner = data.records[0].fields.winner
-        console.log(dataWinner)
-        
-        if (dataWinner == undefined) {
+        if (dataWinner === undefined) {
             getWinner()
         } else {
             return
@@ -118,11 +117,11 @@ const getWinner = () => {
     }
 };
 
-const enterGiveaway = () => {
+enterGiveawayEl.addEventListener("click", function() {
     let body = {
         "fields": {
-            "email": entrantEmailElement.value,
-            "name": entrantNameElement.value
+            "email": entrantEmailEl.value,
+            "name": entrantNameEl.value
          }
     }
     
@@ -135,7 +134,11 @@ const enterGiveaway = () => {
         },
     })
         .then(response => response.json())
-        .catch(err => console.log(err))
-}
+        .catch(err => alert(err))
+
+    entrantEmailEl.value = ""
+    entrantNameEl.value = "" 
+});
+
 
 getDataEvent()

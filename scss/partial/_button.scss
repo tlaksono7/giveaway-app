@@ -1,14 +1,15 @@
 .btn {
-    padding: 10px 20px;
+    padding: 10px;
     border-radius: 10px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
 .btn--main {
     background-color: $btn-primary;
     border: 1px solid $btn-primary;
-    border-radius: 10px;
     color: $color-white;
+    text-decoration: none;
     cursor: pointer;
     &:hover {
         background-color: $btn-primary-hover;
@@ -19,7 +20,6 @@
 .btn--reset {
     background-color: $btn-reset;
     border: 1px solid $btn-reset;
-    border-radius: 10px;
     color: $color-black;
     cursor: pointer;
     &:hover {
