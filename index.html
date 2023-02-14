@@ -4,29 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Korean Name</title>
+    <title>Giveaway App</title>
     <link href="assets/img/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="apple-touch-icon" href="assets/img/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/starter.css">
+    <script src="assets/js/airtable.js"></script>
 </head>
 <body>
     <div class="main-content">
         <div class="container">
-            <div class="prize-image">
-                <img class="prize-image__thumbnail" src="#">
-            </div>
-            <div class="enter-giveaway">
+            <div id="prize-body">
+                <ul id="prize-list"></ul>
+                <!--<div id="image-prize" class="prize-body__image"></div>
+                <h2 id="prize-name" class="prize-body__name"></h2>
+                <div class="timer">Time remaining: <span id="timeRemaining">0:0:0</span></div>
+                 <div class="enter-giveaway">
                 <div class="enter-giveaway__form">
-                    <input type="text" name="name">
-                    <button type="button" class="btn btn--main btn--enter-giveaway">Enter Giveaway</button>
+                    <input type="text" id="entrantName" placeholder="Enter your name" required>
+                    <input type="email" id="entrantEmail" placeholder="Enter your email" required>
+                    <button type="button" class="btn btn--main btn--enter-giveaway" onclick="enterGiveaway()">Enter Giveaway</button>
                 </div>
             </div>
+            -->
+            </div>
+    
+            <div class="winner">Winner: <span id="winner">-</span></div>
         </div>
     </div>
-    
-    <script src="assets/js/script.js"></script> 
+    <script src="assets/js/client.js"></script> 
 </body>
 </html>
