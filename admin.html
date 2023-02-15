@@ -14,16 +14,22 @@
     <script src="assets/js/airtable.js"></script>
 </head>
 <body>
-    <div class="main-content">
+    <div class="content">
         <div class="container">
-            <div id="event-body">
-                <input type="text" id="input-prize-name" placeholder="Enter prize name" required>
-                <input type="url" id="input-prize-image" placeholder="Enter image url" required>
-                <input type="datetime-local" id="input-end-date" placeholder="Enter end date & time">
-                <button class="btn btn--main btn--create-giveaway" onclick="createGiveaway()">Create Giveaway</button>
-                <button class="btn btn--main btn--create-giveaway" onclick="removeGiveaway()">Remove Giveaway</button>
+            <div class="content-area">
+                <div class="main-content">
+                    <div class="content-body">
+                        <h4 class="content-action__title">Fill the form with your name and email to enter the giveaway!</h4>
+                        <div class="content-action__body">
+                            <input class="content-action__body-input content-action__body-input--name" type="text" id="name-entrant" placeholder="Enter your name" q>
+                            <input class="content-action__body-input content-action__body-input--email" type="email" id="email-entrant" placeholder="Enter your email">
+                            <a class="btn btn--main" id="create-giveaway">Enter Giveaway</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+            </div>
+            
     </div>
     <script src="assets/js/server.js"></script> 
 </body>

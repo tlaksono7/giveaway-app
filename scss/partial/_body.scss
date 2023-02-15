@@ -1,12 +1,11 @@
 body {
-    background-color: $secondary-background;
+    background-color: $primary-background;
     font-family: 'Poppins', sans-serif;
     color: $color-black;
 }
 
 .container {
     padding: 10px;
-    max-width: 800px;
+    max-width: 1024px;
     margin: 0 auto;
 }
-

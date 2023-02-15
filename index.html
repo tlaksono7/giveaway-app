@@ -14,24 +14,44 @@
     <script src="assets/js/airtable.js"></script>
 </head>
 <body>
-    <div class="main-content">
+    <div class="content">
         <div class="container">
-            <div class="content-body">
-                <div id="prize-image" class="content-body__prize-body-image"></div>
-                <h2 id="prize-name" class="content-body__prize-body-name"></h2>
-                <div class="content-body__timer">
-                    <div class="content-body__timer-title">Time remaining:</div>
-                    <div class="content-body__time-count" id="time-remaining">0<span>:</span>0<span>:</span>0</div>
+            <div class="content-area">
+                <div class="main-content">
+                    <div class="content-body">
+                        <div id="prize-image" class="content-body__prize-body-image"></div>
+                        <h2 id="prize-name" class="content-body__prize-body-name"></h2>
+                        <div class="content-body__timer">
+                            <div class="content-body__timer-title">Time remaining:</div>
+                            <div class="content-body__time-count" id="time-remaining">0<span>:</span>0<span>:</span>0</div>
+                        </div>
+                        <div class="content-body__winner">Winner: <span id="winner">-</span></div>
+                    </div>
+                    <div class="content-action">
+                        <h4 class="content-action__title">Fill the form with your name and email to enter the giveaway!</h4>
+                        <div class="content-action__body">
+                            <input class="content-action__body-input content-action__body-input--name" type="text" id="name-entrant" placeholder="Enter your name" q>
+                            <input class="content-action__body-input content-action__body-input--email" type="email" id="email-entrant" placeholder="Enter your email">
+                            <a class="btn btn--main" id="enter-giveaway">Enter Giveaway</a>
+                        </div>
+                        
+                    </div>
                 </div>
-                <div class="content-body__winner">Winner: <span id="winner">-</span></div>
+                <div class="asside-content">
+                    <div class="content-entrant">
+                        <h2 class="content-entrant__title">Giveaway Entrant</h2>
+                        <div class="content-entrant__body">
+                            <div class="content-entrant__body-header">
+                                <h4>Name</h4>
+                                <h4>Email</h4>
+                            </div>
+                            <div id="entrant-list" class="content-entrant__body-list"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="content-action">
-                <p class="content-action__title">Fill the form with your name and email to enter the giveaway!</p>
-                <input class="content-action__input content-action__input--name" type="text" id="name-entrant" placeholder="Enter your name" q>
-                <input class="content-action__input content-action__input--email" type="email" id="email-entrant" placeholder="Enter your email">
-                <a class="btn btn--main" id="enter-giveaway">Enter Giveaway</a>
             </div>
-        </div>
+            
     </div>
     <script src="assets/js/client.js"></script> 
 </body>

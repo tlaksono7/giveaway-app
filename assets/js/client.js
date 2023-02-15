@@ -8,6 +8,7 @@ const enterGiveawayEl = document.getElementById("enter-giveaway")
 const winnerEl = document.getElementById("winner")
 const pirzeListEl = document.getElementById("prize-list")
 
+const entrantListEl = document.getElementById("entrant-list")
 
 const API_KEY = 'pat0Om1gJLkklfIU4.87ddb722f46d7d144f9e5445e0c800695f65b56cb0171589ab70d1e40166b0d8'
 const BASE_ID = 'appYajUTYIlmfenmW'
@@ -140,5 +141,28 @@ enterGiveawayEl.addEventListener("click", function() {
     entrantNameEl.value = "" 
 });
 
+const getEntrantList = () => {
+    fetch(urlEntries, {
+        method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + API_KEY,
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => loadEntrant(data))
+        .catch(err => console.error(err))
+    const loadEntrant = (data) => {  
+        let dataEntrant = data.records
+        for (let i=0; i < dataEntrant.length; i++) {
+            entrantListEl.innerHTML += `<div class="content-entrant__body-list__item">
+                                            <p>${dataEntrant[i].fields.name}</p>
+                                            <p>${dataEntrant[i].fields.email.slice(0, 3)}***@****${dataEntrant[i].fields.email.slice(-3)}</p>
+                                        </div>`
+        }
+    }
 
+}
+
+getEntrantList()
 getDataEvent()
