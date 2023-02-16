@@ -14,7 +14,7 @@ const API_KEY = 'pat0Om1gJLkklfIU4.87ddb722f46d7d144f9e5445e0c800695f65b56cb0171
 const BASE_ID = 'appYajUTYIlmfenmW'
 
 const urlEvent = 'https://api.airtable.com/v0/'+BASE_ID+'/Event'
-const urlEntries = 'https://api.airtable.com/v0/'+BASE_ID+'/Entries'
+const urlEntrant = 'https://api.airtable.com/v0/'+BASE_ID+'/Entrant'
 
 const getDataEvent = () => {
     fetch(urlEvent, {
@@ -83,7 +83,7 @@ const checkWinner = () => {
 }
 
 const getWinner = () => {
-    fetch(urlEntries, {
+    fetch(urlEntrant, {
     method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + API_KEY,
@@ -95,16 +95,16 @@ const getWinner = () => {
     .catch(err => console.error(err))
 
     const drawWinner = (data) => { 
-        let dataEntries = data.records
-        const randomIndex = Math.floor(Math.random() * dataEntries.length)
-        const winner = dataEntries[randomIndex].fields.name
+        let dataEntrant = data.records
+        const randomIndex = Math.floor(Math.random() * dataEntrant.length)
+        const winner = dataEntrant[randomIndex].fields.name
         let body = {
             "fields": {
                 "winner": winner,
                 "status": "Ended"
             }
         }
-        fetch(urlEntries + "/" + localStorage.getItem("id"), {
+        fetch(urlEntrant + "/" + localStorage.getItem("id"), {
             method: "PATCH",
             body: JSON.stringify(body),
             headers: {
@@ -126,7 +126,7 @@ enterGiveawayEl.addEventListener("click", function() {
          }
     }
     
-    fetch(urlEntries, {
+    fetch(urlEntrant, {
         method: "POST",
         body: JSON.stringify(body),
         headers: {
@@ -142,7 +142,7 @@ enterGiveawayEl.addEventListener("click", function() {
 });
 
 const getEntrantList = () => {
-    fetch(urlEntries, {
+    fetch(urlEntrant, {
         method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + API_KEY,
